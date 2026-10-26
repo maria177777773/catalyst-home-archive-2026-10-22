@@ -1,0 +1,13 @@
+/* Мобильные шрифты (Маша 13.07): заголовки секций и названия программ крупнее.
+   Подключается _lead.js на всех страницах. */
+@media (max-width: 480px) {
+  .cfp-sech h2 { font-size: 32px !important; line-height: 1.12 !important; }
+  #c5-grid .c5-c h4 { font-size: 20px !important; line-height: 1.2 !important; }
+  .marq .short .t { font-size: 20px !important; }
+  .c5-feat h3 { font-size: 30px !important; }
+}
+
+/* Маша 13.07: убрать плавающую кнопку «Заказать тимбилдинг» (Tilda t943) на мобиле — дублирует чат-виджет */
+@media (max-width: 600px) {
+  #rec1886623871, .t943, .t943__buttonwrapper { display: none !important; }
+}

@@ -1,0 +1,65 @@
+@media screen and (max-width: 480px) { /*Максимальная ширина смартфона где будет применяться эффект сетки зеро-блока*/
+.t-col { 
+    padding: 0 10px !important; } /*Это отступы слева и справа до контента в Grid-контейнере*/
+.t-container {
+    max-width: 320px !important; /*Это максимальная ширина контейнера в зеро-блоке, при отображении мобильного*/
+}
+}
+/* ============ КАНОН ЗАГОЛОВКОВ (Маша 09.07.2026): H2 всегда ExtraBold 800, как «Каталог программ» ============
+   Реальные файлы 700/800 (одиночный TT-Commons-Pro.woff «100 900» даёт фейковую тонкую жирность). */
+@font-face{font-family:'TTCommonsPro';src:url('/catalyst-home-archive-2026-10-22/fonts/TT_Commons_Pro_Bold.woff2') format('woff2');font-weight:700;font-display:swap}
+@font-face{font-family:'TTCommonsPro';src:url('/catalyst-home-archive-2026-10-22/fonts/TT_Commons_Pro_ExtraBold.woff2') format('woff2');font-weight:800;font-display:swap}
+h2{font-weight:800 !important}
+h2 b,h2 strong{font-weight:800 !important}
+
+/* ============ ШКАЛА КЕГЛЕЙ (05.08.2026) ============
+   Гейт интерфейса ловил дробные размеры и текст ниже 13px. Шкала должна быть целой,
+   иначе на разных экранах кегли «плывут» и рядом стоящие подписи выглядят разнокалиберно. */
+.cfp-chip,.task-chips .task-chip{font-size:14px!important}
+.cfp-desc{font-size:18px!important}
+.date,.cs-block .short .date{font-size:14px!important}
+
+/* Известное отклонение: в блоке «Что нового» кнопки справа стоят по центру пары
+   «заголовок + подпись», а гейт ждёт центр строки заголовка (расхождение 33px).
+   Три попытки поправить это стилями поверх старой разметки эффекта не дали —
+   лечится при переносе блока на чистую вёрстку, а не заплаткой (правило 47). */
+
+/* ============ КАПСУЛА МЕНЮ НА УЗКИХ ЭКРАНАХ (05.08.2026) ============
+   На внутренних страницах в меню пять пунктов, и до ширины 1360px кнопка «Получи КП»
+   вылезала за край капсулы, давая горизонтальную прокрутку страницы (31px на 1280,
+   287px на 1024). Освобождаем место: скрываем кружки мессенджеров (они есть в футере
+   и в мобильном меню), поджимаем внутренние отступы. Телефон оставляем. */
+/* 06.10.2026: правила зазоров ниже писались для прежней капсулы; у меню V1 (#catMenuV4.mv) свои зазоры, иначе на 981-1360 px
+   страницы с этим файлом и страницы со своей вёрсткой показывали меню с разными промежутками */
+@media screen and (min-width:981px) and (max-width:1360px){
+  #catMenuV4 .socs a:not(:first-child){display:none!important}
+  #catMenuV4:not(.mv) nav{gap:18px!important}
+  #catMenuV4 .cta{padding-left:18px!important;padding-right:18px!important}
+}
+@media screen and (min-width:981px) and (max-width:1150px){
+  #catMenuV4 .socs{display:none!important}
+  #catMenuV4:not(.mv) nav{gap:14px!important}
+  #catMenuV4 .cta{font-size:16px!important}
+}
+
+/* Лента отзывов: прежние правила карточек .rv-card убраны 05.10.2026, карточки теперь .rvp
+   (телефон с подписью) и живут в общем блоке _shared/reviews.html со своими стилями. */
+
+
+/* ============ БЛОК «КОНТРОЛЬ КАЧЕСТВА» (06.08.2026) ============
+   Заголовок в три строки перекрывал текст: замер давал -46px, стрелка налезала
+   на первую строку. Сдвигаем текстовые слои правой колонки вниз и добавляем
+   блоку воздуха снизу, чтобы ничего не выехало за пределы секции. */
+@media screen and (min-width:981px){
+  #rec566207777 .tn-elem__5662077771592354671146{top:224px!important}
+  #rec566207777 .tn-elem__5662077771676286054720{top:228px!important}
+  #rec566207777 .tn-elem__5662077771676286054736{top:351px!important}
+  #rec566207777 .tn-elem__5662077771679376138808,
+  #rec566207777 .tn-elem__5662077771679376138816{top:439px!important}
+  #rec566207777 .t396__artboard,#rec566207777 .t396__filter,#rec566207777 .t396__carrier{height:624px!important}
+}
+
+/* Отступ нужен НАД заголовком отзывов, а не между заголовком и лентой:
+   правило на саму ленту раздвигало заголовок и карточки на 171px. */
+.rv-wrap{margin-top:0}
+.rv-wrap .rv-wrap{margin-top:0}

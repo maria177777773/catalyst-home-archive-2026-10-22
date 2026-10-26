@@ -1,0 +1,12 @@
+/* Лицензионный TT Commons Pro со своего origin — перебивает битый триал с внешнего CDN.
+   ВАЖНО (05.08.2026): единый файл с диапазоном 100 900 нельзя объявлять на веса 700/800 —
+   браузер синтезирует «фейковую» жирность, и заголовки выглядят тоньше канона. Для 700 и 800
+   отдаются реальные начертания Bold/ExtraBold, единый woff остаётся только на лёгкие веса. */
+@font-face{font-family:'TTCommonsPro';src:url('/catalyst-home-archive-2026-10-22/fonts/TT-Commons-Pro.woff') format('woff');font-weight:100 600;font-style:normal;font-display:swap;}
+@font-face{font-family:'TTCommonsPro';src:url('/catalyst-home-archive-2026-10-22/fonts/TT_Commons_Pro_Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:'TTCommonsPro';src:url('/catalyst-home-archive-2026-10-22/fonts/TT_Commons_Pro_ExtraBold.woff2') format('woff2');font-weight:800 900;font-style:normal;font-display:swap;}
+
+/* Второе написание имени встречается в старой разметке — гарнитура та же, чтобы не расходилась. */
+@font-face{font-family:'TT Commons Pro';src:url('/catalyst-home-archive-2026-10-22/fonts/TT-Commons-Pro.woff') format('woff');font-weight:100 600;font-style:normal;font-display:swap;}
+@font-face{font-family:'TT Commons Pro';src:url('/catalyst-home-archive-2026-10-22/fonts/TT_Commons_Pro_Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:'TT Commons Pro';src:url('/catalyst-home-archive-2026-10-22/fonts/TT_Commons_Pro_ExtraBold.woff2') format('woff2');font-weight:800 900;font-style:normal;font-display:swap;}
